@@ -8,4 +8,4 @@ Add tips in input text, and let it looks like there's a span element in the inpu
 * 能够智能拷贝之前input元素的原始样式，并附加到新的元素上。Support for cloneing the original styles of the input text smartly, and attach them to the new wrap.
 
 ### 示例与文档 Demo&Doc
-http://eshengsky.github.io/jquery-emoji/
+http://eshengsky.github.io/jQuery-inputTip/
