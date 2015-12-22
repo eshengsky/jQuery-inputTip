@@ -4,13 +4,8 @@
 ;
 +function ($, window, document) {
 
-    //插件名称
     var PLUGIN_NAME = 'inputTip',
-
-    //版本号
         VERSION = '1.0.0',
-
-    //默认值
         DEFAULTS = {
             tip: '',
             position: 'left'
