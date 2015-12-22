@@ -61,6 +61,7 @@
                 'font-size',
                 'font-family',
                 'width',
+                'height',
                 'line-height',
                 'display',
                 'position',
@@ -103,7 +104,7 @@
                 that.$input.css('width', (parseInt(input_width) - parseInt(input_bl_width) - parseInt(input_br_width) - parseInt(span_width)) + 'px');
             }
 
-
+            that.$input.css('height', 'auto');
             that.$input.css('border', 'none');
             that.$input.css('box-shadow', 'none');
             that.$input.css('transition', 'none');

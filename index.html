@@ -13,25 +13,30 @@
 <section class="page-header">
     <h1 class="project-name">jQuery-inputTip</h1>
 
-    <h2 class="project-tagline">Add tip in input text, and let it looks like there's a span element in the input. <br>在input文本框中加入提示文字，并且看上去就像是在input内部有一个span元素一样。</h2>
+    <h2 class="project-tagline">Add tip in input text, and let it looks like there's a span element in the input. <br>在input文本框中加入提示文字，并且看上去就像是在input内部有一个span元素一样。
+    </h2>
     <a href="https://github.com/eshengsky/jQuery-inputTip" class="btn">View on GitHub</a>
     <a href="https://github.com/eshengsky/jQuery-inputTip/zipball/master" class="btn">Download .zip</a>
     <a href="https://github.com/eshengsky/jQuery-inputTip/tarball/master" class="btn">Download .tar.gz</a>
 </section>
 
 <section class="main-content container">
-    <h2>功能 Features</h2>
+    <h2>功能 features</h2>
     <ul>
-        <li>在input文本框中加入提示文字，并且看上去就像是在input内部有一个span元素一样。Add tips in input text, and let it looks like there's a span element in the input.</li>
+        <li>在input文本框中加入提示文字，并且看上去就像是在input内部有一个span元素一样。Add tips in input text, and let it looks like there's a span
+            element in the input.
+        </li>
         <li>提示文字可以放在input之前，也可以放在之后。Tip can be placed before input field, or after it.</li>
-        <li>能够智能拷贝之前input元素的原始样式，并附加到新的元素上。Support for cloneing the original styles of the input text smartly, and attach them to the new wrap.</li>
+        <li>能够智能拷贝之前input元素的原始样式，并附加到新的元素上。Support for cloneing the original styles of the input text smartly, and
+            attach them to the new wrap.
+        </li>
     </ul>
     <h2>示例 demo</h2>
 
     <div class="row firstRow">
         <div class="col-md-6">
             <h4>文本框 input text</h4>
-            <input type="text" id="input1" style="width:200px;" placeholder="please input url here" />
+            <input type="text" id="input1" style="width:200px;" placeholder="please input url here"/>
 
             <div class="m-t-20">
                 <button class="btn btn-primary" id="btnLoad1">添加提示 load tip</button>
@@ -51,17 +56,20 @@ $('#input1').inputTip({
         <div class="col-md-6">
             <h4>文本框 input text</h4>
 
-            <input type="text" id="input2" class="form-control" placeholder="please type the amount" />
+            <input type="text" id="input2" class="form-control" placeholder="nick name"/>
+
             <div class="m-t-20">
                 <button class="btn btn-primary" id="btnLoad2">添加提示 load tip</button>
-                <h5 class="m-t-20">* 新的"input"会自动拷贝原先input的大部分样式，并自动减少原先input的宽度以保持整体宽度不变。The new "input" can clone most styles from prev input, and reduce the width of prev input to maintain the overall width unchanged.  </h5>
+                <h5 class="m-t-20">* 新的"input"会自动拷贝原先input的大部分样式，并自动减少原先input的宽度以保持整体宽度样式不变。The new "input" can clone
+                    most styles from prev input, and reduce the width of prev input to maintain the overall style of
+                    width unchanged. </h5>
             </div>
         </div>
         <div class="col-md-6">
             <h4>代码 code</h4>
             <pre class="pre-scrollable">
 $('#input2').inputTip({
-    tip: 'RMB',
+    tip: '@163.com',
     position: 'right'
 });
             </pre>
@@ -70,9 +78,59 @@ $('#input2').inputTip({
     <hr/>
     <h2>使用 usage</h2>
 
+    <p>
+        首先在页面上引用css文件和js文件，css文件一般在&lt;head&gt;中添加，js文件一般在&lt;/body&gt;之前添加。注意要先引用jquery，再引用该js。<br>
+        Firstly reference the css and js file of this plugin, the best location of the css reference is in &lt;head&gt;,
+        and the js is before &lt;/body&gt;, make sure the js follows jQuery.
+    </p>
+    <pre>
+&lt;head&gt;
+    ...
+    &lt;!--the css for this plugin--&gt;
+    &lt;link rel="stylesheet" href="css/jquery.inputTip.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;!--the js for jquery--&gt;
+&lt;script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js">&lt;/script&gt;
+&lt;!--the js for this plugin--&gt;
+&lt;script src="js/jquery.inputTip.js">&lt;/script&gt;
+&lt;/body&gt;
+    </pre>
+    <p>
+        然后在input上执行初始化<br>
+        then initialize inputTip on input text
+    </p>
+    <pre>
+$('input[type=text]').inputTip(options);
+    </pre>
     <h2>参数 options</h2>
-    <h2>方法 method</h2>
-
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th>名称 name</th>
+            <th>类型 type</th>
+            <th>默认值 default</th>
+            <th>说明 desc</th>
+        </tr>
+        <tr>
+            <td>tip</td>
+            <td>String</td>
+            <td>''</td>
+            <td>
+                需要加入的提示文字。<br>
+                the tip text you want to add in.
+            </td>
+        </tr>
+        <tr>
+            <td>position</td>
+            <td>String</td>
+            <td>'left'</td>
+            <td>
+                提示文字的位置，可选'left'或'right'。<br>
+                the position of the tip, optional 'left' or 'right'.
+            </td>
+        </tr>
+    </table>
 
     <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/eshengsky/jQuery-inputTip">jQuery-inputTip</a> is maintained by <a
@@ -94,7 +152,7 @@ $('#input2').inputTip({
 
     $('#btnLoad2').click(function () {
         $('#input2').inputTip({
-            tip: 'RMB',
+            tip: '@163.com',
             position: 'right'
         });
         $('#input2').focus();
