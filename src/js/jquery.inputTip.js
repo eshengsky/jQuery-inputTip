@@ -1,9 +1,8 @@
 /**
  * Created by Sky on 2015/12/20.
  */
-;
-+function ($, window, document) {
-
+;(function ($, window, document) {
+	
     var PLUGIN_NAME = 'inputTip',
         VERSION = '1.0.0',
         DEFAULTS = {
@@ -26,7 +25,7 @@
                 span;
             that.$input.wrap('<div class="input_tip_wrap"></div>');
             wrap = that.$input.parent('.input_tip_wrap');
-            if (position == 'right') {
+            if (position === 'right') {
                 $(wrap).append('<span class="input_tip_span">' + tip + '</span>');
             } else {
                 $(wrap).prepend('<span class="input_tip_span">' + tip + '</span>');
@@ -85,7 +84,7 @@
             $(span).css('color', that.$input.css('color'));
 
             var input_display = that.$input.css('display');
-            if (input_display == 'block') {
+            if (input_display === 'block') {
                 that.$input.css('display', 'inline-block');
             }
             var span_width = $(span).css('width');
@@ -107,12 +106,12 @@
             that.$input.css('margin', '0');
             that.$input.css('padding', '0');
 
-            that.$input.on("focus", function () {
-                $(wrap).addClass("input_tip_focus");
+            that.$input.on('focus', function () {
+                $(wrap).addClass('input_tip_focus');
             });
 
-            that.$input.on("blur", function () {
-                $(wrap).removeClass("input_tip_focus");
+            that.$input.on('blur', function () {
+                $(wrap).removeClass('input_tip_focus');
             });
         },
         _getOriginalStyle: function (element, prop) {
@@ -131,14 +130,18 @@
         return this.each(function () {
             var $this = $(this);
             var data = $this.data('plugin_' + PLUGIN_NAME);
-            var options = $.extend({}, DEFAULTS, $this.data(), typeof option == 'object' && option)
+            var options = $.extend({}, DEFAULTS, $this.data(), typeof option === 'object' && option)
 
-            if (!data) $this.data('plugin_' + PLUGIN_NAME, (data = new Plugin(this, options)))
-            if (typeof option == 'string') data[option]();
+            if (!data){
+                $this.data('plugin_' + PLUGIN_NAME, (data = new Plugin(this, options)));
+            }
+            if (typeof option === 'string'){
+                data[option]();
+            }
         });
     }
 
     $.fn[PLUGIN_NAME] = fn;
     $.fn[PLUGIN_NAME].Constructor = Plugin;
 
-}(jQuery, window, document);
+}(jQuery, window, document));
